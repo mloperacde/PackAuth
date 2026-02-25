@@ -1,0 +1,7 @@
+{
+  "name": "PackAuth - Packaging Authorization Tool",
+  "description": "A tool to generate packaging authorization requests with component verification and batch code simulation.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

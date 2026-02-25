@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitud Autorización Envasado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                900: '#0c4a6e',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Courier New', 'monospace'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      
+      /* Container Query Support for Proportional Sizing */
+      .img-container {
+        container-type: inline-size;
+      }
+
+      /* PRINT STYLES - ROBUST FIX */
+      @media print {
+        @page { margin: 10mm; size: auto; }
+        
+        html, body {
+          height: auto !important;
+          overflow: visible !important;
+          background: white !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        
+        /* Hide everything by default */
+        body * {
+          visibility: hidden;
+        }
+
+        /* Explicitly show the preview container, drafts list, and their children */
+        .document-preview-container, .document-preview-container *,
+        .drafts-list-print-container, .drafts-list-print-container * {
+          visibility: visible;
+        }
+
+        /* Reset the root container to not interfere with absolute positioning */
+        #root {
+            position: static !important;
+            overflow: visible !important;
+            height: auto !important;
+        }
+
+        /* Position the content at the absolute top-left of the page */
+        .document-preview-container,
+        .drafts-list-print-container {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+          box-shadow: none !important;
+        }
+
+        /* Ensure Colors Print */
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+        
+        /* Hide UI elements explicitly */
+        nav, .no-print {
+          display: none !important;
+        }
+        
+        /* Layout Helpers */
+        .page-break { page-break-before: always; }
+        .avoid-break { break-inside: avoid; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <div id="root"></div>
+  </body>
+</html>
